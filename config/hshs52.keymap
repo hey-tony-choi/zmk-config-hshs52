@@ -18,6 +18,47 @@
 #define ADJ_L    5
 
 / {
+    behaviors {
+        lshft_caps: lshft_caps {
+            compatible = "zmk,behavior-mod-morph";
+            label = "LSHFT_CAPS";
+            bindings = <&sk LSHFT>, <&caps_word>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        rshft_caps: rshft_caps {
+            compatible = "zmk,behavior-mod-morph";
+            label = "RSHFT_CAPS";
+            bindings = <&sk RSHFT>, <&caps_word>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RSFT)>;
+        };
+
+        homerow_l: homerow_l {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_L";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            require-prior-idle-ms = <130>;
+            flavor = "tap-preferred";
+        };
+
+        mo_tog: mo_tog {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MO_TOG";
+            bindings = <&mo>, <&tog>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -31,28 +72,28 @@
  */
 
             bindings = <
-&kp TAB           &kp Q       &kp W      &kp E  &kp R      &kp T                                         &kp Y      &kp U     &kp I      &kp O     &kp P     &kp MINUS
-&mt LCTRL ESCAPE  &kp A       &kp S      &kp D  &kp F      &kp G                                         &kp H      &kp J     &kp K      &kp L     &kp SEMI  &kp APOS
-&kp LALT          &kp Z       &kp X      &kp C  &kp V      &kp B     &caps_word                &kp EQUAL   &kp N      &kp M     &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
-&none             &kp C_MUTE  &kp LCTRL         &kp  LGUI &kp LSHFT  &kp BSPC   &mo 3  &lt 4 RET  &kp SPACE  &kp RSHFT  &kp RGUI             &kp RALT  &kp DOWN  &kp RIGHT
+&kp TAB           &kp Q       &kp W      &kp E  &kp R     &kp T                                                 &kp Y        &kp U     &kp I      &kp O     &kp P     &kp MINUS
+&mt LCTRL ESCAPE  &kp A       &kp S      &kp D  &kp F     &kp G                                                 &kp H        &kp J     &kp K      &kp L     &kp SEMI  &kp APOS
+&kp LALT          &kp Z       &kp X      &kp C  &kp V     &kp B        &caps_word                    &kp EQUAL  &kp N        &kp M     &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
+&none             &kp C_MUTE  &kp LCTRL         &kp LGUI  &lshft_caps  &kp BSPC    &mo 3  &lt 4 RET  &kp SPACE  &rshft_caps  &kp RGUI             &kp RALT  &kp DOWN  &kp RIGHT
             >;
         };
 
         graphite_layer {
             bindings = <
-&kp TAB           &kp Z       &kp L      &kp D  &kp W      &kp B                                         &kp APOS   &kp F     &kp O    &kp U      &kp J     &kp SEMI
-&mt LCTRL ESCAPE  &kp N       &kp R      &kp T  &kp S      &kp G                                         &kp Y      &kp H     &kp A    &kp E      &kp I     &kp COMMA
-&kp LALT          &kp Q       &kp X      &kp M  &kp C      &kp V     &caps_word                &kp EQUAL   &kp K      &kp P     &kp DOT  &kp MINUS  &kp FSLH  &kp RSHFT
-&none             &kp C_MUTE  &kp LCTRL         &kp  LGUI &kp LSHFT  &kp BSPC   &mo 3  &lt 4 RET  &kp SPACE  &kp RSHFT  &kp RGUI           &kp RALT   &kp DOWN  &kp RIGHT
+&kp TAB           &kp Z       &kp L      &kp D  &kp W     &kp B                                                  &kp APOS     &kp F     &kp O    &kp U      &kp J     &kp SEMI
+&mt LCTRL ESCAPE  &kp N       &kp R      &kp T  &kp S     &kp G                                                  &kp Y        &kp H     &kp A    &kp E      &kp I     &kp COMMA
+&kp LALT          &kp Q       &kp X      &kp M  &kp C     &kp V        &key_repeat                    &kp EQUAL  &kp K        &kp P     &kp DOT  &kp MINUS  &kp FSLH  &kp RSHFT
+&none             &kp C_MUTE  &kp LCTRL         &kp LGUI  &lshft_caps  &kp BSPC     &mo 3  &lt 4 RET  &kp SPACE  &rshft_caps  &kp RGUI           &kp RALT   &kp DOWN  &kp RIGHT
             >;
         };
 
         night_layer {
             bindings = <
-&kp TAB        &kp B       &kp F      &kp L  &kp K      &kp V                                         &kp P      &kp G     &kp O     &kp U      &kp DOT    &kp EQUAL
-&mt LCTRL ESC  &kp N       &kp S      &kp H  &kp T      &kp M                                         &kp Y      &kp C     &kp A     &kp E      &kp I      &kp FSLH
-&kp LALT       &kp X       &kp Z      &kp J  &kp D      &kp Q     &caps_word                &kp EQUAL   &kp APOS   &kp W     &kp SEMI  &kp MINUS  &kp COMMA  &kp RSHFT
-&none             &kp C_MUTE  &kp LCTRL         &kp  LGUI &kp LSHFT  &kp BSPC   &mo 3  &lt 4 RET  &kp SPACE  &kp RSHFT  &kp RGUI            &kp RALT   &kp DOWN   &kp RIGHT
+&kp TAB        &kp B       &kp F      &kp L  &kp K     &kp V                                                           &kp P        &kp G     &kp O     &kp U      &kp DOT    &kp EQUAL
+&mt LCTRL ESC  &kp N       &kp S      &kp H  &kp T     &kp M                                                           &kp Y        &kp C     &kp A     &kp E      &kp I      &kp FSLH
+&kp LALT       &kp X       &kp Z      &kp J  &kp D     &kp Q        &caps_word                              &kp EQUAL  &kp APOS     &kp W     &kp SEMI  &kp MINUS  &kp COMMA  &kp RSHFT
+&none          &kp C_MUTE  &kp LCTRL         &kp LGUI  &lshft_caps  &kp R       &lt 3 BACKSPACE  &lt 4 RET  &kp SPACE  &rshft_caps  &kp RGUI            &kp RALT   &kp DOWN   &kp RIGHT
             >;
         };
 
@@ -102,7 +143,7 @@
             bindings = <
 &none        &to 0         &to 1         &to 2         &none         &none                                             &none   &kp PRINTSCREEN  &none  &ext_power EP_OFF  &ext_power EP_ON  &none
 &none        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                                      &none   &none            &none  &none              &none             &none
-&bootloader  &sys_reset    &none         &out OUT_USB  &out OUT_BLE  &none         &bt BT_CLR                  &none   &none   &none            &none  &none              &sys_reset  &bootloader
+&bootloader  &sys_reset    &none         &out OUT_USB  &out OUT_BLE  &none         &bt BT_CLR                  &none   &none   &none            &none  &none              &sys_reset        &bootloader
 &none        &none         &trans                      &trans        &trans        &trans      &trans  &trans  &trans  &trans  &trans                  &kp RCTRL          &none             &none
             >;
         };
