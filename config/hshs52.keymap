@@ -106,19 +106,19 @@
  */
 
             bindings = <
-&kp TAB           &kp Q       &kp W      &kp E  &kp R     &kp T                                                                              &kp Y                     &kp U     &kp I      &kp O     &kp P     &kp MINUS
-&mt LCTRL ESCAPE  &kp A       &kp S      &kp D  &kp F     &kp G                                                                              &kp H                     &kp J     &kp K      &kp L     &kp SEMI  &kp APOS
-&kp LALT          &kp Z       &kp X      &kp C  &kp V     &kp B                     &kp LS(LA(LC(LGUI)))                          &kp EQUAL  &kp N                     &kp M     &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
-&kp LGUI          &kp C_MUTE  &kp GLOBE         &kp LGUI  &sksft_caps_ho_l LSHFT 0  &kp BSPC              &mo_tog 3 3  &lt 4 RET  &kp SPACE  &sksft_caps_ho_r RSHFT 0  &kp RGUI             &kp RALT  &kp DOWN  &kp RIGHT
+&kp TAB           &kp Q       &kp W      &kp E  &kp R     &kp T                                                                        &kp Y                     &kp U     &kp I      &kp O     &kp P     &kp MINUS
+&mt LCTRL ESCAPE  &kp A       &kp S      &kp D  &kp F     &kp G                                                                        &kp H                     &kp J     &kp K      &kp L     &kp SEMI  &kp APOS
+&kp LALT          &kp Z       &kp X      &kp C  &kp V     &kp B                     &kp LS(LA(LC(LGUI)))                    &kp EQUAL  &kp N                     &kp M     &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
+&kp LGUI          &kp C_MUTE  &kp GLOBE         &kp LGUI  &sksft_caps_ho_l LSHFT 0  &kp BSPC              &mo 3  &lt 4 RET  &kp SPACE  &sksft_caps_ho_r RSHFT 0  &kp RGUI             &kp RALT  &kp DOWN  &kp RIGHT
             >;
         };
 
         sturdy_layer {
             bindings = <
-&kp TAB           &kp V       &kp M      &kp L  &kp C     &kp P                                                                              &kp X                     &kp F     &kp O     &kp U     &kp J      &kp MINUS
-&mt LCTRL ESCAPE  &kp S       &kp T      &kp R  &kp D     &kp Y                                                                              &kp DOT                   &kp N     &kp A     &kp E     &kp I      &kp FSLH
-&kp LALT          &kp Z       &kp K      &kp W  &kp G     &kp Q                     &kp LS(LA(LC(LGUI)))                          &kp EQUAL  &kp B                     &kp H     &kp APOS  &kp SEMI  &kp COMMA  &kp RSHFT
-&kp LGUI          &kp C_MUTE  &kp GLOBE         &kp LGUI  &sksft_caps_ho_l LSHFT 0  &kp BSPC              &mo_tog 3 3  &lt 4 RET  &kp SPACE  &sksft_caps_ho_r RSHFT 0  &kp RGUI            &kp RALT  &kp DOWN   &kp RIGHT
+&kp TAB           &kp Z       &kp M      &kp L  &kp G     &kp Q                                                                        &kp X                     &kp F     &kp O     &kp U     &kp J      &kp MINUS
+&mt LCTRL ESCAPE  &kp S       &kp T      &kp R  &kp D     &kp Y                                                                        &kp B                     &kp N     &kp A     &kp E     &kp I      &kp DOT
+&kp LALT          &kp V       &kp K      &kp W  &kp C     &kp P                     &kp LS(LA(LC(LGUI)))                    &kp EQUAL  &kp SLASH                 &kp H     &kp APOS  &kp SEMI  &kp COMMA  &kp RSHFT
+&kp LGUI          &kp C_MUTE  &kp GLOBE         &kp LGUI  &sksft_caps_ho_l LSHFT 0  &kp BSPC              &mo 3  &lt 4 RET  &kp SPACE  &sksft_caps_ho_r RSHFT 0  &kp RGUI            &kp RALT  &kp DOWN   &kp RIGHT
             >;
         };
 
@@ -141,10 +141,10 @@
  */
 
             bindings = <
-&trans   &kp N1    &kp N2    &kp N3     &kp N4     &kp N5                                 &kp RS(G)  &kp N7  &kp N8  &kp N9   &kp COLON  &kp PERCENT
-&trans   &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none                                  &kp K      &kp N4  &kp N5  &kp N6   &kp MINUS  &kp PLUS
-&trans   &kp F1    &kp F2    &kp F3     &kp F4     &kp F5  &none                  &none   &kp J      &kp N1  &kp N2  &kp N3   &kp FSLH   &kp ASTERISK
-&kp F11  &kp F12   &trans               &trans     &trans  &trans  &trans  &mo 5  &trans  &trans     &kp N0          &kp DOT  &kp TILDE  &kp DOLLAR
+&trans     &kp LC(N1)  &kp LC(N2)  &kp LC(N3)  &kp LC(N4)  &kp LC(N5)                                        &kp RS(G)  &kp N7   &kp N8  &kp N9     &kp COLON  &kp PERCENT
+&trans     &kp LGUI    &kp LALT    &kp LCTRL   &kp LSHFT   &none                                             &kp K      &kp N4   &kp N5  &kp N6     &kp MINUS  &kp PLUS
+&kp LG(A)  &kp LG(Z)   &kp LG(X)   &kp LG(C)   &kp LG(V)   &none       &kp LG(GRAVE)                 &none   &kp J      &kp N1   &kp N2  &kp N3     &kp FSLH   &kp ASTERISK
+&kp F11    &kp F12     &trans                  &trans      &trans      &trans         &trans  &mo 5  &trans  &kp N0     &kp DOT          &kp COMMA  &kp TILDE  &kp DOLLAR
             >;
         };
 
@@ -158,10 +158,10 @@
  */
 
             bindings = <
-&kp GRAVE             &kp EXCL              &kp LBRC   &kp RBRC   &kp QUESTION  &kp PLUS                                     &kp BSLH     &kp LBKT  &kp LEFT_PARENTHESIS  &kp RPAR   &kp RBKT      &kp SEMICOLON
-&kp PERCENT           &kp CARET             &kp EQUAL  &kp UNDER  &kp DOLLAR    &kp ASTRK                                    &kp POUND    &kp DQT   &kp DOT               &kp SQT    &kp COLON     &kp SPACE
-&kp TILDE             &kp LESS_THAN         &kp PIPE   &kp MINUS  &kp GT        &kp SLASH  &kp C_PP                 &kp F19  &kp AT_SIGN  &kp N0    &kp N1                &kp N2     &none         &kp RET
-&kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &kp AMPS              &trans        &trans     &trans    &mo 5  &trans  &trans   &trans       &trans                          &kp GLOBE  &kp C_VOL_DN  &sk C_VOL_UP
+&kp GRAVE             &kp EXCL              &kp LBRC   &kp RBRC   &kp QUESTION  &kp PLUS                                    &kp BSLH     &kp LBKT  &kp LEFT_PARENTHESIS  &kp RPAR   &kp RBKT      &kp SEMICOLON
+&kp PERCENT           &kp CARET             &kp EQUAL  &kp UNDER  &kp DOLLAR    &kp ASTRK                                   &kp POUND    &kp DQT   &kp DOT               &kp SQT    &kp COLON     &kp SPACE
+&kp TILDE             &kp LESS_THAN         &kp PIPE   &kp MINUS  &kp GT        &kp SLASH  &kp C_PP                 &none   &kp AT_SIGN  &kp N0    &kp N1                &kp N2     &kp N3        &kp RET
+&kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &kp AMPS              &trans        &trans     &trans    &mo 5  &trans  &trans  &trans       &trans                          &kp GLOBE  &kp C_VOL_DN  &sk C_VOL_UP
             >;
         };
 
