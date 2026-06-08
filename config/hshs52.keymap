@@ -115,6 +115,11 @@
             bindings = <&kp LG(Z)>;
             key-positions = <25 26>;
         };
+
+        spc_eql {
+            bindings = <&spc_eqls>;
+            key-positions = <31 46>;
+        };
     };
 
     macros {
@@ -123,6 +128,13 @@
             #binding-cells = <0>;
             bindings = <&kp F19 &tog 1>;
             label = "ENG_KOR";
+        };
+
+        spc_eqls: spc_eqls {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SPACE &kp EQUAL &kp SPACE>;
+            label = "SPC_EQLS";
         };
     };
 
@@ -191,10 +203,10 @@
  */
 
             bindings = <
-&kp GRAVE             &kp EXCL              &kp LBRC   &kp RBRC   &kp QUESTION  &kp PLUS                                    &kp BSLH     &kp LBKT  &kp LEFT_PARENTHESIS  &kp RPAR   &kp RBKT      &kp SEMICOLON
-&kp PERCENT           &kp CARET             &kp EQUAL  &kp UNDER  &kp DOLLAR    &kp ASTRK                                   &kp POUND    &kp DQT   &kp DOT               &kp SQT    &kp COLON     &kp SPACE
-&kp TILDE             &kp LESS_THAN         &kp PIPE   &kp MINUS  &kp GT        &kp SLASH  &kp C_PP                 &none   &kp AT_SIGN  &kp N0    &kp N1                &kp N2     &kp N3        &kp RET
-&kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &kp AMPS              &trans        &trans     &trans    &mo 5  &trans  &trans  &trans       &trans                          &kp GLOBE  &kp C_VOL_DN  &sk C_VOL_UP
+&kp GRAVE             &kp EXCL              &kp LBRC      &kp RBRC      &kp QUESTION  &kp PLUS                                       &kp BSLH     &kp LBKT         &kp LEFT_PARENTHESIS  &kp RPAR         &kp RBKT         &kp SEMICOLON
+&kp PERCENT           &kp CARET             &kp KP_EQUAL  &kp UNDER     &kp DOLLAR    &kp ASTRK                                      &kp POUND    &kp DQT          &kp KP_DOT            &kp SQT          &kp COLON        &kp SPACE
+&kp TILDE             &kp LESS_THAN         &kp PIPE      &kp KP_MINUS  &kp GT        &kp KP_SLASH  &kp C_PP                 &none   &kp AT_SIGN  &kp KP_NUMBER_0  &kp KP_NUMBER_1       &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp RET
+&kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &kp AMPS                    &trans        &trans        &trans    &mo 5  &trans  &trans  &trans       &trans                                 &kp GLOBE        &kp C_VOL_DN     &sk C_VOL_UP
             >;
         };
 
