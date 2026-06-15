@@ -154,7 +154,7 @@
         cma_spc: cma_spc {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp KP_COMMA &kp SPACE>;
+            bindings = <&kp COMMA &kp SPACE>;
             label = "CMA_SPC";
         };
 
