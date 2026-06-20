@@ -154,7 +154,7 @@
         cma_spc: cma_spc {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp COMMA &kp SPACE>;
+            bindings = <&kp KP_COMMA &kp SPACE>;
             label = "CMA_SPC";
         };
 
@@ -164,6 +164,13 @@
             bindings = <&kp KP_DOT &kp SPACE>;
             label = "PRD_SPC";
         };
+
+        gm_str: gm_str {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M>;
+            label = "GM_STR";
+        };
     };
 
     keymap {
@@ -171,14 +178,14 @@
 
         sturdy_layer {
             bindings = <
-&kp TAB           &kp Z       &kp M      &kp L  &kp P     &kp G                                                                        &kp X                     &kp F     &kp O     &kp U           &kp J     &kp UNDER
-&mt LCTRL ESCAPE  &kp S       &kp T      &kp R  &kp D     &kp Y                                                                        &kp B                     &kp N     &kp A     &kp E           &kp I     &prd_spc
-&mo 5             &kp V       &kp K      &kp Q  &kp C     &kp W                     &kp LS(LA(LC(LGUI)))                    &kp EQUAL  &kp SLASH                 &kp H     &cma_spc  &kp SEMI        &kp SQT   &kp RSHFT
-&kp LGUI          &kp C_MUTE  &kp GLOBE         &kp LGUI  &sksft_caps_ho_l LSHFT 0  &kp BSPC              &mo 2  &lt 3 RET  &kp SPACE  &sksft_caps_ho_r RSHFT 0  &eng_kor            &kp LEFT_ARROW  &kp DOWN  &kp RIGHT
+&kp TAB           &kp Z       &kp M      &kp L  &kp P     &kp G                                                                        &kp X                     &kp F     &kp O      &kp U           &kp J      &kp UNDER
+&mt LCTRL ESCAPE  &kp S       &kp T      &kp R  &kp D     &kp Y                                                                        &kp B                     &kp N     &kp A      &kp E           &kp I      &kp DOT
+&kp LEFT_ALT      &kp V       &kp K      &kp Q  &kp C     &kp W                     &kp LS(LA(LC(LGUI)))                    &kp EQUAL  &kp SLASH                 &kp H     &kp COMMA  &kp SEMI        &lt 5 SQT  &kp RSHFT
+&kp LGUI          &kp C_MUTE  &kp GLOBE         &kp LGUI  &sksft_caps_ho_l LSHFT 0  &kp BSPC              &mo 2  &lt 3 RET  &kp SPACE  &sksft_caps_ho_r RSHFT 0  &eng_kor             &kp LEFT_ARROW  &kp DOWN   &kp RIGHT
             >;
         };
 
-        base_layer {
+        qwerty_layer {
             /* QWERTY
  * -------------------------------------------------------------------------------------------------------------------------------------
  * | `     |   Q   |   W   |   E   |   R   |   T   |-----------------------------------|   Y   |   U   |   I   |   O   |   P   | BKSPC |
@@ -248,10 +255,19 @@
 
         utility {
             bindings = <
-&kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &trans   &trans   &trans   &trans                                           &kp C_PREVIOUS  &kp C_PLAY_PAUSE  &kp C_AC_FORWARD  &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP
-&trans                &kp F13               &kp F14  &kp F15  &kp F16  &kp F17                                          &kp H           &kp J             &kp K             &kp L       &trans        &trans
-&trans                &kp F18               &kp F23  &kp F20  &kp F21  &kp F22  &trans                          &trans  &trans          &trans            &trans            &trans      &trans        &trans
-&trans                &trans                &trans            &trans   &trans   &trans  &trans  &midline_break  &trans  &trans          &kp F19                             &trans      &trans        &trans
+&kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &trans   &trans   &trans   &trans                                           &kp C_PREVIOUS  &kp C_PLAY_PAUSE  &kp C_AC_FORWARD  &kp C_MUTE       &kp C_VOL_DN  &kp C_VOL_UP
+&trans                &kp F13               &kp F14  &kp F15  &kp F16  &kp F17                                          &kp H           &kp J             &kp K             &kp L            &trans        &trans
+&trans                &kp F18               &kp F23  &kp F20  &kp F21  &kp F22  &trans                          &trans  &kp LEFT_ARROW  &kp DOWN_ARROW    &kp UP_ARROW      &kp RIGHT_ARROW  &trans        &trans
+&trans                &trans                &trans            &trans   &trans   &trans  &trans  &midline_break  &trans  &trans          &kp F19                             &trans           &trans        &trans
+            >;
+        };
+
+        layer_6 {
+            bindings = <
+&trans  &trans  &kp N9  &kp N8  &kp N7   &kp G                                   &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &kp N6  &kp N5  &kp N4   &kp K                                   &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &kp N3  &kp N2  &kp N1   &kp J   &trans                  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans          &kp DOT  &kp N0  &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans
             >;
         };
     };
