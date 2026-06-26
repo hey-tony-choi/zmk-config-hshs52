@@ -120,6 +120,11 @@
             bindings = <&spc_eqls>;
             key-positions = <31 46>;
         };
+
+        under {
+            bindings = <&kp UNDER>;
+            key-positions = <10 11>;
+        };
     };
 
     macros {
@@ -185,7 +190,7 @@
 
         sturdy_layer {
             bindings = <
-&kp TAB           &kp Z       &kp M    &kp L  &kp P     &kp G                                                                        &kp X                     &kp F     &kp O      &kp U           &kp J      &kp UNDER
+&kp TAB           &kp Z       &kp M    &kp L  &kp P     &kp G                                                                        &kp X                     &kp F     &kp O      &kp U           &kp J      &kp MINUS
 &mt LCTRL ESCAPE  &kp S       &kp T    &kp R  &kp D     &kp Y                                                                        &kp B                     &kp N     &kp A      &kp E           &kp I      &kp DOT
 &kp LEFT_ALT      &kp V       &kp K    &kp Q  &kp C     &kp W                     &kp LS(LA(LC(LGUI)))                    &kp EQUAL  &kp SLASH                 &kp H     &kp COMMA  &kp SEMI        &lt 5 SQT  &kp RSHFT
 &kp LGUI          &kp C_MUTE  &kp F18         &kp LGUI  &sksft_caps_ho_l LSHFT 0  &kp BSPC              &mo 2  &lt 3 RET  &kp SPACE  &sksft_caps_ho_r RSHFT 0  &eng_kor             &kp LEFT_ARROW  &kp DOWN   &kp RIGHT
